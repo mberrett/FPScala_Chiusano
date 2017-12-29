@@ -15,10 +15,10 @@ object Poly {
     loop(0)
   }
 
-  def abstractSearchKey[A](a: List[A], p: A): Int = {
+  def abstractSearchKey[A](a: List[A], p: A = Boolean): Int = {
     def loop(n: Int): Int ={
       if (n > a.length) -1
-      else if (a(n) == p) n+1 // If the function p matches the current element, we've found a match
+      else if (p(a(n))) n+1 // If the function p matches the current element, we've found a match
       else loop(n+1)
     }
     loop(0)
@@ -31,7 +31,7 @@ object Poly {
 
   private def formatAbstractSearchKey(x: Int) = {
     val msg = "%d was found at position #%d of the list"
-    msg.format(x, abstractSearchKey[Int](listIntegers, x))
+    msg.format(x, abstractSearchKey[Int](listIntegers, y => y == x)) // lambda function 
   }
 
   def main(args: Array[String]): Unit = { //Unit serves the same purpose as void in languages like Java or C
