@@ -1,3 +1,2 @@
 # Functional Programming with Scala
-Exercises from Chiusano and Bjarnason's Book on Functional Programming in Scala
-As well as exercises from scala-exercises.com
+Exercises from Chiusano and Bjarnason's Book, "Functional Programming in Scala", as well as some supplemental material from scala-exercises.com
