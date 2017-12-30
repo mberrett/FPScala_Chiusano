@@ -1,18 +1,21 @@
 // Newton's Method for Square Root Approximation
 
-def abs(x: Double) = if (x > 0) x else -x
+def sqrt(x: Double) = {
 
-def improve(guess: Double, x: Double) = {
-  (guess + x / guess)/ 2
+  def sqrtIter(guess: Double): Double =
+    if (isGoodEnough(guess)) guess
+    else sqrtIter(improve(guess))
+
+  def isGoodEnough(guess: Double) =
+    abs(square(guess) - x) < 0.001
+
+  def improve(guess: Double) =
+    (guess + x / guess) / 2
+
+  def abs(x: Double) = if (x > 0) x else -x
+  def square(x: Double) = x*x
+  
+  sqrtIter(1.0)
 }
 
-def isGoodEnough(guess: Double, x: Double) = {
-  abs(guess * guess - x) < 0.001
-}
-
-def sqrtIter(guess: Double, x: Double): Double = {
-  if (isGoodEnough(guess, x)) guess
-  else sqrtIter(improve(guess, x), x)
-}
-
-sqrtIter(1,2) // res1: Double = 1.4142156862745097
+sqrt(2) // res1: Double = 1.4142156862745097
