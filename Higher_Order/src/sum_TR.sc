@@ -1,4 +1,4 @@
-// Tail Recursion Version of Sum
+// Tail Recursion Version of sum
 
 def sum(f: Int => Int, a: Int, b: Int): Int = {
   def loop(x: Int, acc: Int): Int = {
