@@ -7,4 +7,4 @@ def sum(f: Int => Int, a: Int, b: Int): Int = {
   }
   loop(a, 0)
 }
-sum(x => x, 1, 10) shouldBe 55
+sum(x => x, 1, 5) // res0: Int = 15
